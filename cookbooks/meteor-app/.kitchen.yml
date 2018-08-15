@@ -25,3 +25,10 @@ suites:
       inspec_tests:
         - test/smoke/default
     attributes:
+
+    # The 'lifecycle' block will work via test-kitchen v1.23.0 and up
+    # Used here to delay 'kitchen verify' to give meteor time to startup.
+    # https://github.com/test-kitchen/test-kitchen/blob/master/CHANGELOG.md
+    lifecycle:
+      post_converge:
+      - local: sleep 180 
