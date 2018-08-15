@@ -28,12 +28,12 @@ end
 
 describe processes('node') do
   it { should exist }
-  its('list.length') { should eq 2 }
+  its('entries.length') { should eq 2 }
   its('users') { should eq ['vagrant', 'vagrant'] }
 end
 
 describe processes('mongod') do
   it { should exist }
-  its('list.length') { should eq 1 }
+  its('entries.length') { should eq 1 }
   its('users') { should eq ['vagrant'] }
 end
